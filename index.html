@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Video Selector</title>
+
+    <style>
+
+        body {
+
+            background: url('https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif') no-repeat center center fixed; 
+
+            -webkit-background-size: cover;
+
+            -moz-background-size: cover;
+
+            -o-background-size: cover;
+
+            background-size: cover;
+
+        }
+
+        .container {
+
+            text-align: center;
+
+        }
+
+        .title {
+
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+
+            color: pink;
+
+            font-size: 48px;
+
+            text-align: center;
+
+            margin: 20px 0;
+
+        }
+
+        .container iframe, 
+
+        .container select {
+
+            margin: 0 auto;
+
+            display: block;
+
+        }
+
+        #video-selector {
+
+            font-size: 16px; /* Double the usual size for better visibility */
+
+            color: red; /* Font color */
+
+            background-color: pink; /* Background color */
+
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+
+            padding: 10px; /* Adds padding to make the dropdown bigger */
+
+            width: 200px; /* Adjust as needed */
+
+            text-align-last: center; /* Center the text in the dropdown */
+
+            -moz-text-align-last: center; /* For Firefox */
+
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        function changeVideo() {
+
+            var videoURLs = {
+
+                "main-beach": "https://player.livepush.io/emvo-dabXNuMO?autoplay=1",
+
+                "the-pass": "https://player.livepush.io/emv92gn6G-CCx?autoplay=1",
+
+                "lennox": "https://player.livepush.io/emvY9PKDrPZWg?autoplay=1"
+
+            };
+
+
+
+            var selectedOption = document.getElementById("video-selector").value;
+
+            var iframe = document.getElementById("video-iframe");
+
+            iframe.src = videoURLs[selectedOption];
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <div class="title">syrflyne</div>
+
+    <div class="container">
+
+        <iframe id="video-iframe" width="560" height="315" src="https://player.livepush.io/emvo-dabXNuMO" frameborder="0" allowfullscreen></iframe>
+
+        <select id="video-selector" onchange="changeVideo()">
+
+            <option value="main-beach">Main Beach</option>
+
+            <option value="the-pass">The Pass</option>
+
+            <option value="lennox">Lennox</option>
+
+        </select>
+
+    </div>
+
+
+
+</body>
+
+</html>
